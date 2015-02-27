@@ -27,8 +27,27 @@ public class FindDevelopers {
 		         @Override
 		         public void onResult(ResponseContext context, AppsResponse response) {
 		                  System.out.println("Connection success"); 
+		                  response.getApp(0).getCreator();
 		         }
 		});
+		
+		
+		CommentsRequest commentsRequest = CommentsRequest.newBuilder()
+                 .setAppId("7065399193137006744")
+                 .setStartIndex(0)
+                 .setEntriesCount(10)
+                 .build();
+
+		session.append(commentsRequest, new Callback<CommentsResponse>() {
+				@Override
+				public void onResult(ResponseContext context, CommentsResponse response) {
+						System.out.println("Response : " + response);
+						// response.getComments(0).getAuthorName()
+						// response.getComments(0).getCreationTime()
+						// ...
+				}
+		});
+		
 		session.flush();
 	}
 
