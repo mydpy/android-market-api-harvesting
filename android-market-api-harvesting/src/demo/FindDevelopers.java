@@ -4,7 +4,7 @@ import java.io.IOException;
 
 import com.gc.android.market.api.*;
 import com.gc.android.market.api.MarketSession.*; 
-import com.gc.android.market.api.model.Market.*; 
+import com.gc.android.market.api.model.Market.*;
 
 public class FindDevelopers {
 	
